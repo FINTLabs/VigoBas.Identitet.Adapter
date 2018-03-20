@@ -21,14 +21,16 @@ namespace Fint.Sse.Adapter.Services
         {
             var relationRettighet1 = new RelationBuilder()
                 .With(Identitet.Relasjonsnavn.RETTIGHET)
-                .ForType("no.FINT.Model.Ressurser.Tilganger.Rettighet") //TODO
+                .ForType(typeof(Rettighet)) //TODO
                 .Value("BAT-001")
+                .Field("systemid")
                 .Build();
 
             var relationRettighet2 = new RelationBuilder()
                 .With(Identitet.Relasjonsnavn.RETTIGHET)
-                .ForType("no.FINT.Model.Ressurser.Tilganger.Rettighet") //TODO
+                .ForType(typeof(Rettighet)) //TODO
                 .Value("BAT-002")
+                .Field("systemid")
                 .Build();
 
             var identiteter = _identiteter.ToList();
@@ -41,14 +43,16 @@ namespace Fint.Sse.Adapter.Services
         {
             var relationIdentitet1 = new RelationBuilder()
                 .With(Rettighet.Relasjonsnavn.IDENTITET)
-                .ForType("no.FINT.Model.Ressurser.Tilganger.Identitet") //TODO
+                .ForType(typeof(Identitet)) //TODO
                 .Value("BATMAN")
+                .Field("systemid")
                 .Build();
 
             var relationIdentitet2 = new RelationBuilder()
                 .With(Rettighet.Relasjonsnavn.IDENTITET)
-                .ForType("no.FINT.Model.Ressurser.Tilganger.Identitet") //TODO
+                .ForType(typeof(Identitet)) //TODO
                 .Value("ROBIN")
+                .Field("systemid")
                 .Build();
 
             var rettigheter = _rettigheter.ToList();
@@ -76,12 +80,14 @@ namespace Fint.Sse.Adapter.Services
                 new Rettighet {
                     SystemId = new Identifikator { Identifikatorverdi = "BAT-001" },
                     Beskrivelse = "Grants access to the secret cave",
-                    Navn = "BATCAVE"
+                    Navn = "BATCAVE",
+                    Kode = "BAT-001"
                 },
                 new Rettighet {
                     SystemId = new Identifikator { Identifikatorverdi = "BAT-002" },
                     Beskrivelse = "Grants access to driving the ultimate vehicle",
-                    Navn = "BATMOBILE"
+                    Navn = "BATMOBILE",
+                    Kode = "BAT-002"
                 }
             };
         }
