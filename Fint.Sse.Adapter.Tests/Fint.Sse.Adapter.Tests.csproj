@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FINT.Event.Model" Version="2.0.0" />
+    <PackageReference Include="FINT.Model.Ressurser" Version="0.99.0" />
+    <PackageReference Include="FINT.Sse" Version="1.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170517-02" />
+    <PackageReference Include="Moq" Version="4.7.99" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EventListeners\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fint.Sse.Adapter\Fint.Sse.Adapter.csproj" />
+  </ItemGroup>
+
+</Project>
